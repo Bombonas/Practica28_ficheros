@@ -1,6 +1,6 @@
 def copyF(file):
     f = open(file, "r")
-    txt = f.read()
+    txt = f.read(100) # COMO MAXIMO LEERA 100 BYTES
     f_name = f.name
     f.close()
 
