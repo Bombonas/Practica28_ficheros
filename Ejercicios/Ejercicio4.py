@@ -3,10 +3,13 @@ def count(file):
     f = open(file, "r")
     txt = f.read()
     num_chr = len(txt)
-    num_lines = f.readlines()
-    print(num_lines)
+    f.seek(0)
+    lines = f.readlines()
     f.close()
-    num_wrd = len(txt.split(" "))
+    num_lines = len(lines)
+    num_wrd = 0
+    for line in lines:
+        num_wrd += len(line.split(" "))
     print("Numero de lineas:", num_lines)
     print("Numero de caracteres:", num_chr)
     print("Numero de palabras:", num_wrd)
